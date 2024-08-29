@@ -1,0 +1,14 @@
+name: Sync Fork
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: "0 0 * * *"
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Remote Repository Sync
+       uses: reposyncer/reposync@v2
+       with:
+        name: open-webui/open-webui
+        url: https://github.com/open-webui/open-webui
